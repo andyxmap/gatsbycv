@@ -10,7 +10,13 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-emotion","gatsby-plugin-image",
-  "gatsby-plugin-sharp",]
+  "gatsby-plugin-sharp",    {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      name: `projects`,
+      path: `${__dirname}/src/projects`,
+    }
+  },"gatsby-plugin-mdx","gatsby-transformer-sharp"]
 };
 
 export default config;
